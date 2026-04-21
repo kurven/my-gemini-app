@@ -119,7 +119,7 @@ def init_state():
         st.session_state.audience = {}
 
 # ─── Gemini ───────────────────────────────────────────────────────────────────
-ddef get_api_key():
+def get_api_key():
     if "GEMINI_API_KEY" in st.secrets:
         return st.secrets["GEMINI_API_KEY"]
     else:
