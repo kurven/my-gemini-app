@@ -237,7 +237,7 @@ def area_chart(df: pd.DataFrame, x: str, y: str, color: str = "#9a7fcb"):
         x=df[x], y=df[y], mode="lines+markers", fill="tozeroy",
         line=dict(color=color, width=2),
         fillcolor=color + "26",
-        marker=dict(size=5, color=blue),
+        marker=dict(size=5, color="blue"),
     ))
     fig.update_layout(**CHART_BASE, height=155)
     fig.update_xaxes(showgrid=True, gridcolor="#ede9e3", showline=False, tickfont=dict(size=10))
