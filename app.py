@@ -119,15 +119,11 @@ def init_state():
         st.session_state.audience = {}
 
 # ─── Gemini ───────────────────────────────────────────────────────────────────
-def get_api_key():
-    key = os.environ.get("GEMINI_API_KEY", "")
-    if not key:
-        try:
-            key = st.secrets.get("GEMINI_API_KEY", "")
-        except Exception:
-            pass
-    return key
-
+ddef get_api_key():
+    if "GEMINI_API_KEY" in st.secrets:
+        return st.secrets["GEMINI_API_KEY"]
+    else:
+        return ""
 
 def call_gemini(prompt: str, use_search: bool = False, json_output: bool = False):
     """Call Gemini API. Returns (result_text, error_string)."""
