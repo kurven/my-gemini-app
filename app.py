@@ -990,7 +990,7 @@ def main():
         # API key status
         api_key = get_api_key()
         if api_key:
-            st.success("Gemini API connected", icon="✓")
+            st.success("Gemini API connected", icon="✅")
         else:
             st.warning("Add your GEMINI_API_KEY to enable AI features", icon="🔑")
 
