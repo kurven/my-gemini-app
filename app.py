@@ -142,16 +142,16 @@ def call_gemini(prompt: str, use_search: bool = False, json_output: bool = False
         if use_search:
             try:
                 model = genai.GenerativeModel(
-                    "gemini-2.5-flash",
+                    "gemini-3-flash",
                     tools=[{"google_search_retrieval": {}}],
                 )
                 resp = model.generate_content(prompt, generation_config=gen_config)
             except Exception:
                 # Fall back to standard model if search grounding fails
-                model = genai.GenerativeModel("gemini-2.5-flash")
+                model = genai.GenerativeModel("gemini-3-flash")
                 resp = model.generate_content(prompt, generation_config=gen_config)
         else:
-            model = genai.GenerativeModel("gemini-2.5-flash")
+            model = genai.GenerativeModel("gemini-3-flash")
             resp = model.generate_content(prompt, generation_config=gen_config)
 
         return resp.text, None
